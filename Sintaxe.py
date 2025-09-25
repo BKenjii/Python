@@ -9,12 +9,12 @@
 # Nome da variavel deve começar com uma letra ou um underline (_), e pode conter letras, numeros e underscores.
 # Exemplo:
 
-nome = "João"  # Variavel do tipo string
-idade = 25     # Variavel do tipo inteiro
-altura = 1.83  # Variavel do tipo float
-estudante = True  # Variavel do tipo booleano
-_nome_Amigo = "Andre" # Variavel com underline no inicio
-idade2 = 30 # Variavel com numero no final
+nome = "João"           # Variavel do tipo string   (letra/texto)
+idade = 25              # Variavel do tipo inteiro  (numero sem casa decimal)
+altura = 1.83           # Variavel do tipo float    (numero com casa decimal)
+estudante = True        # Variavel do tipo booleano (True ou False: verdadeiro ou falso)
+_nome_Amigo = "Andre"   # Variavel com underline no inicio
+idade2 = 30             # Variavel com numero no final
 
 # Operações Matematicas
 a = 10
@@ -31,6 +31,7 @@ exponenciacao   = a ** b #resultado 100000
 # Os operadores de atribuição são usados para modificar o valor de uma variável de forma abreviada.
 # Eles combinam uma operação matemática com a atribuição.
 # Exemplo:
+
 x = 10   # Atribuição simples
 x += 5   # x = x + 5 (x agora é 15)
 x -= 3   # x = x - 3 (x agora é 12)
@@ -41,25 +42,26 @@ x /= 4   # x = x / 4 (x agora é 6.0)
 # A função print() é usada para exibir mensagens e dados na tela.
 # No print() aspas duplas ou simples (") (') são usadas para definir strings (textos).
 # Você pode usar o print() para exibir variaveis, textos ou uma combinação de ambos.
-# Você pode separar diferentes itens no print() com uma vírgula (,)
+# Você pode separar diferentes itens no print() com uma vírgula (,) e o python irá adicionar um espaço entre eles automaticamente.
+# Voce pode usar o \n no print() que ele ira pular uma linha apos ou durante a mensagem. dependendo de onde for colocado.
 # Exemplo: 
 
-print("Bom dia, Mundo!")        # Mostra a mensagem "Bom dia, Mundo!" no console
-print("Nome:", nome)            # Mostra a mensagem "Nome: João"
-print(a + b)                    # Mostra o resultado da soma (15)
-print("Bom" "dia")              # Mostra a mensagem "Bomdia" (sem espaço entre as palavras)
-print("Bom", "dia")             # Mostra a mensagem "Bom dia" (com espaço entre as palavras)
-print("idade:", idade, "anos")  # Mostra a mensagem "idade: 25 anos"
+print("Bom dia, Mundo!")          # Mostra a mensagem "Bom dia, Mundo!" no console
+print("Nome:", nome)              # Mostra a mensagem "Nome: João"
+print(a + b)                      # Mostra o resultado da soma (15)
+print("Bom" "dia")                # Mostra a mensagem "Bomdia" (sem espaço entre as palavras)
+print("Bom", "dia")               # Mostra a mensagem "Bom dia" (com espaço entre as palavras)
+print("idade:", idade, "anos\n")  # Mostra a mensagem "idade: 25 anos"
 
 #Entrada de Dados
 # A função input() é usada para receber dados do usuário.
 # O input() sempre retorna uma string, então se você precisar de outro tipo de dado, é necessário converter. passando um tipo de variavel antes do input() Ex: Float(), int() 
 # Exemplo:
 
-Usuario = input("Digite seu nome: ")                     # Mostra na Tela "Digite seu nome: " e espera o usuario digitar algo
-Idade_Usuario = int(input("Digite sua idade: "))         # Mostra na Tela "Digite sua idade: " e como usamos int() ele espera o usuario digitar um numero inteiro
+Usuario = input("Digite seu nome: ")              # Mostra na Tela "Digite seu nome: " e espera o usuario digitar algo
+Idade_Usuario = int(input("Digite sua idade: "))  # Mostra na Tela "Digite sua idade: " e como usamos int() ele espera o usuario digitar um numero inteiro
 
-print("Olá", Usuario, "voce tem", Idade_Usuario, "anos") # Mostra a mensagem "Olá [Nome do Usuario] voce tem [Idade do Usuario] anos" 
+print("Olá", Usuario, "voce tem", Idade_Usuario, "anos\n") # Mostra a mensagem "Olá [Nome do Usuario] voce tem [Idade do Usuario] anos" 
 
 # Operadores de Comparação
 # Os operadores de comparação são usados para comparar dois valores.
@@ -69,9 +71,9 @@ print("Olá", Usuario, "voce tem", Idade_Usuario, "anos") # Mostra a mensagem "O
 
 p = 10
 o = 5
-print(p == o)  # 10 não é igual a 5 (False) falso
-print(p != o)  # 10 e 5 são diferentes (True) verdadeiro
-print (p > o)  # 10 é maior que 5 (True) verdadeiro
+print(p == o)       # 10 não é igual a 5 (False) falso
+print(p != o)       # 10 e 5 são diferentes (True) verdadeiro
+print(p > o, "\n")  # 10 é maior que 5 (True) verdadeiro
 
 # Operador Condicional
 # São usadas para criar decisões no código com base em condições estabelecidas.
@@ -90,6 +92,69 @@ elif idade3 == 18:
 else:
     print("Maior de idade")  # Se a idade for maior que 18, mostra "Maior de idade"
     
+# Operadores lógicos
+# Os operadores lógicos são usados para ter mais de uma condição em uma estrutura condicional.
+# Os principais operadores lógicos são: and (e), or (ou), not (não)
+# Voce pode usar quantos operadores logicos quiser em uma unica estrutura condicional.
+# Exemplo:
+
+paulo = 17
+caio  = 24
+chovendo = True
+
+if paulo >= 18 and caio >= 18:
+    print("Os dois são maiores de idade")         # Se paulo e caio tiverem 18 ou mais anos    
+else:
+    print("Pelo menos um deles é menor de idade") # Se pelo menos algum deles tiver menos de 18 anos
+
+
+if paulo or caio >= 18:
+    print("Algum deles é maior de idade")         # Pelo menos um deles tem que ser maior de idade
+else:
+    print("Nenhum deles é maior de idade")        # Nenhum deles é maior de idade
+
+
+if not chovendo:
+    print("Não esta chovendo")                    # Se não estiver chovendo: chovendo = False     
+else:
+    print("ta chovendo")                          # Se estiver chovendo: chovendo = True
+
+
+if (paulo and caio >= 18) and not chovendo:
+    print("Os dois são maiores de idade e não esta chovendo\n") # Se os 2 tiverem 18 ou mais anos e não estiver chovendo
+else:
+    print("Algum deles é menor de idade ou esta chovendo\n")    # Se algum deles tiver menos de 18 anos ou estiver chovendo
+
 # Estrutura de Repetição
-# É uma parte do codigo que ira se repetir enquanto uma condição for verdadeira.
+# É uma Estrutura que pode repetir uma parte do codigo uma determinada quantidade definida ou enquanto uma condição for verdadeira.
 # As principais estruturas de repetição em Python são: for e while.    
+# O for é usado para percorrer sobre uma sequência (como uma lista, string,) ou uma determinada quantidade de números.  ////////////(ver depois tupla, dicionário, conjunto e string)
+# O while é usado para repetir um bloco de código enquanto uma condição for verdadeira.
+# Exemplo:
+
+for i in range(5):    # Repete o bloco de código 5 vezes (de 0 a 4)
+    print(i)          # Mostra os números de 0 a 4 
+
+
+frutas = ["maçã", "banana", "laranja"]
+
+for fruta in frutas:  # Percorre cada fruta na lista frutas
+    print(fruta)      # Mostra o nome de cada fruta
+
+
+carta = 6
+
+while carta >= 0:                                                       # Enquanto a carta for maior ou igual a 0
+    print("Voce descartou uma carta e agora tem:", carta, " cartas")    # Mostra uma mensagem com a quantidade de cartas
+    carta -= 1                                                          # Diminui 1 carta a cada repetição
+
+
+senha = "1234"
+tentativa = ""
+
+while tentativa != senha:                           # Enquanto a tentativa for diferente da senha
+    tentativa = input("\nDigite a senha:")          # Digita a senha
+    if tentativa != senha:                          # Se errar a senha
+        print("Senha incorreta, tente novamente.")  # Mostra a mensagem que a senha esta incorreta
+
+print("Senha correta!")                     # Mostra a mensagem quando a senha estiver correta
