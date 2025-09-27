@@ -136,12 +136,6 @@ for i in range(5):    # Repete o bloco de código 5 vezes (de 0 a 4)
     print(i)          # Mostra os números de 0 a 4 
 
 
-frutas = ["maçã", "banana", "laranja"]
-
-for fruta in frutas:  # Percorre cada fruta na lista frutas
-    print(fruta)      # Mostra o nome de cada fruta
-
-
 carta = 6
 
 while carta >= 0:                                                       # Enquanto a carta for maior ou igual a 0
@@ -149,7 +143,7 @@ while carta >= 0:                                                       # Enquan
     carta -= 1                                                          # Diminui 1 carta a cada repetição
 
 
-senha = "1234"
+senha = "1234"                             
 tentativa = ""
 
 while tentativa != senha:                           # Enquanto a tentativa for diferente da senha
